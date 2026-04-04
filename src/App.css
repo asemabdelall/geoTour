@@ -1,0 +1,166 @@
+/* App-specific styles - أنماط التطبيق */
+
+/* Chat area with earth gradient background */
+.chat-background-earth {
+  background: 
+    radial-gradient(ellipse at 80% 0%, rgba(184, 92, 56, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 100%, rgba(201, 162, 39, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(107, 123, 60, 0.04) 0%, transparent 70%),
+    #1A1510;
+}
+
+/* Sidebar active item indicator - RTL */
+.sidebar-item-active-rtl {
+  position: relative;
+}
+
+.sidebar-item-active-rtl::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background: linear-gradient(to bottom, #D4A574, #B85C38);
+  border-radius: 2px 0 0 2px;
+}
+
+/* Exploration card image overlay */
+.exploration-card-earth {
+  position: relative;
+}
+
+.exploration-card-earth::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26, 21, 16, 0.9) 0%, rgba(26, 21, 16, 0.3) 50%, transparent 100%);
+}
+
+/* Welcome gradient orbs - earth tones */
+.gradient-orb-earth {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.gradient-orb-terracotta {
+  width: 500px;
+  height: 500px;
+  background: #B85C38;
+  top: 5%;
+  right: 15%;
+}
+
+.gradient-orb-gold {
+  width: 400px;
+  height: 400px;
+  background: #C9A227;
+  bottom: 15%;
+  left: 20%;
+}
+
+.gradient-orb-olive {
+  width: 300px;
+  height: 300px;
+  background: #6B7B3C;
+  top: 40%;
+  left: 10%;
+}
+
+/* Mobile overlay */
+.mobile-overlay-earth {
+  background: rgba(26, 21, 16, 0.95);
+  backdrop-filter: blur(15px);
+}
+
+/* Chip hover animation */
+.chip-hover-earth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chip-hover-earth:hover {
+  background: rgba(212, 165, 116, 0.15);
+  border-color: rgba(184, 92, 56, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Map marker pulse */
+@keyframes marker-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.map-marker-pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: inherit;
+  animation: marker-pulse 2s ease-out infinite;
+}
+
+/* Geological timeline line */
+.geo-timeline {
+  position: relative;
+}
+
+.geo-timeline::before {
+  content: "";
+  position: absolute;
+  right: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #D4A574, #B85C38, #6B7B3C, #8B8378);
+}
+
+/* Feature card shine effect */
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+.feature-card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 165, 116, 0.1), transparent);
+  transform: skewX(-20deg);
+  animation: shine 4s ease-in-out infinite;
+}
+
+/* Strata layers animation */
+@keyframes strata-shift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+.strata-layer {
+  animation: strata-shift 8s ease-in-out infinite;
+}
+
+.strata-layer:nth-child(2) { animation-delay: -2s; }
+.strata-layer:nth-child(3) { animation-delay: -4s; }
+.strata-layer:nth-child(4) { animation-delay: -6s; }
+
+/* Custom marker icon */
+.custom-marker {
+  background: linear-gradient(135deg, #B85C38, #D4A574);
+  border: 2px solid #F5E6D3;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(184, 92, 56, 0.4);
+}
